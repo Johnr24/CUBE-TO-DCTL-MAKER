@@ -20,7 +20,7 @@ Loop,  %Folder21%\*.cube,  , 1
 FileRead, lutcontents, %A_LoopFileDir%/%A_LoopFileName%
 FileRead, topofcontent, %A_ScriptDir%/first_half_of_file.dctl
 FileRead, bottomofcontent, %A_ScriptDir%/bottom.dctl
-
-FileAppend,%topofcontent%%lutcontents%%bottomofcontent%, %A_LoopFileDir%/%A_LoopFileName%.dctl
+SplitPath, A_LoopFileName, , , , trimmedname, 
+FileAppend,%topofcontent%%lutcontents%%bottomofcontent%, %A_LoopFileDir%/%trimmedname%.dctl
 }
 ExitApp, 
