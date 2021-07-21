@@ -22,5 +22,6 @@ FileRead, topofcontent, %A_ScriptDir%/first_half_of_file.dctl
 FileRead, bottomofcontent, %A_ScriptDir%/bottom.dctl
 SplitPath, A_LoopFileName, , , , trimmedname, 
 FileAppend,%topofcontent%%lutcontents%%bottomofcontent%, %A_LoopFileDir%/%trimmedname%.dctl
+FileDelete, %A_LoopFileDir%/%A_LoopFileName%
 }
 ExitApp, 
