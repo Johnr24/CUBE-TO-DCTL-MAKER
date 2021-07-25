@@ -1,2 +1,2 @@
-DEFINE_CUBE_LUT(lutname)
+DEFINE_CUBE_LUT(A_LoopFileName)
 {
