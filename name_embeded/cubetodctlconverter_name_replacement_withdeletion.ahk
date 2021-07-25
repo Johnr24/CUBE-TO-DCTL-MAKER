@@ -19,9 +19,11 @@ Loop,  %Folder21%\*.cube,  , 1
 {
 SplitPath, A_LoopFileName, , , , trimmedname, 
 FileRead, lutcontents, %A_LoopFileDir%/%A_LoopFileName%
-FileRead, topofcontent, %A_ScriptDir%/first_half_of_file.dctl
-FileRead, bottomofcontent, %A_ScriptDir%/bottom.dctl
-FileAppend,%topofcontent%%lutcontents%%bottomofcontent%, %A_LoopFileDir%/%trimmedname%.dctl
-;FileDelete, %A_LoopFileDir%/%A_LoopFileName%
+FileRead, topofcontent_p1, %A_ScriptDir%/first_half_of_file_part_1.dctl
+FileRead, topofcontent_p2, %A_ScriptDir%/first_half_of_file_part_2.dctl
+FileRead, bottomofcontent_p1, %A_ScriptDir%/bottom_name_embeded_part_1.dctl
+FileRead, bottomofcontent_p2, %A_ScriptDir%/bottom_name_embeded_part_2.dctl
+FileAppend,%topofcontent_p1%%trimmedname%%topofcontent_p2%%lutcontents%%bottomofcontent_p1%%trimmedname%%bottomofcontent_p2%, %A_LoopFileDir%/%trimmedname%.dctl
+FileDelete, %A_LoopFileDir%/%A_LoopFileName%
 }
 ExitApp, 
