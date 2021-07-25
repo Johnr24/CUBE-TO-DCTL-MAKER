@@ -13,7 +13,7 @@ SplitPath, A_ScriptName, , , , thisscriptname
 ; SetKeyDelay, -1, -1 ; Remove short delay done automatically after every keystroke sent by Send or ControlSend
 ; SetMouseDelay, -1 ; Remove short delay done automatically after Click and MouseMove/Click/Drag
 
-FileSelectFolder, Folder21 , ;C:\ProgramData\Blackmagic Design\DaVinci Resolve\Support\LUT
+FileSelectFolder, Folder21 , C:\ProgramData\Blackmagic Design\DaVinci Resolve\Support\LUT
 
 Loop,  %Folder21%\*.cube,  , 1
 {
@@ -22,6 +22,6 @@ FileRead, lutcontents, %A_LoopFileDir%/%A_LoopFileName%
 FileRead, topofcontent, %A_ScriptDir%/first_half_of_file.dctl
 FileRead, bottomofcontent, %A_ScriptDir%/bottom.dctl
 FileAppend,%topofcontent%%lutcontents%%bottomofcontent%, %A_LoopFileDir%/%trimmedname%.dctl
-;FileDelete, %A_LoopFileDir%/%A_LoopFileName%
+FileDelete, %A_LoopFileDir%/%A_LoopFileName%
 }
 ExitApp, 
